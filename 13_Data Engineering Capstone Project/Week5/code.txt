@@ -1,0 +1,47 @@
+start_mysql
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/sales.sql
+
+mysql
+
+
+CREATE DATABASE sales;
+
+USE sales;
+
+SOURCE sales.sql;
+
+SHOW TABLES;
+
+exit
+
+python3 -m pip install mysql-connector-python==8.0.31
+
+python3 mysqlconnect.py
+
+python3 -m pip install ibm-db
+
+python3 db2connect.py
+
+** call sysproc.admin_cmd('reorg table <schema name>.<table name>') **
+
+
+
+start_airflow
+
+cd /home/project/airflow/dags
+
+mkdir capstone
+
+cd /home/project/airflow/dags/capstone
+
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/accesslog.txt
+
+cd /home/project
+
+cp process_web_log.py $AIRFLOW_HOME/dags
+
+airflow dags unpause process_web_log
+
+
+

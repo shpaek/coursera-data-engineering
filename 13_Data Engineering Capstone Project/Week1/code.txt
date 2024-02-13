@@ -1,0 +1,28 @@
+start_mysql
+
+mysql --host=127.0.0.1 --port=3306 --user=root --password
+
+create database sales;
+
+use sales;
+
+create table sales_data(product_id int, customer_id int, price int, quantity int, timestamp datetime);
+
+show tables;
+
+select count(*) from sales_data;
+
+
+use sales;
+
+create index ts on sales_data(timestamp);
+
+show index from sales_data;
+
+mysqldump -u root -p sales sales_data > sales_data.sql
+
+bash datadump.sh
+
+
+
+

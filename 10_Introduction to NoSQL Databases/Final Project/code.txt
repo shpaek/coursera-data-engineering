@@ -1,0 +1,137 @@
+
+
+export CLOUDANTURL="https://apikey-v2-y04wpwk3w0zwiqjwug5p7mepo82ff2fsoq8h89mp5lh:7d5e6a6a51e7899770fbbf7b62c3aa40@01d70742-565d-4253-8bc7-81f59f80bd2a-bluemix.cloudantnosqldb.appdomain.cloud"
+
+
+curl -X POST $CLOUDANTURL/movies/_index \
+-H"Content-Type: application/json" \
+-d'{
+    "index": {
+        "fields": ["Director"]
+    }
+}'
+
+
+curl -X POST $CLOUDANTURL/movies/_find \
+-H"Content-Type: application/json" \
+-d'{ "selector":
+        {
+            "Director":"Richard Gage"
+                
+        }
+    }'
+
+
+curl -X POST $CLOUDANTURL/movies/_index \
+-H"Content-Type: application/json" \
+-d'{
+    "index": {
+        "fields": ["title"]
+    }
+}'
+
+
+
+curl -X POST $CLOUDANTURL/movies/_find \
+-H"Content-Type: application/json" \
+-d'{ "selector":
+        {
+            "title":"Top Dog"
+
+        },
+        "fields": [
+	"year",
+	"Director"
+        ]
+	
+    }'
+
+
+couchexport --url $CLOUDANTURL --db movies --type jsonl > movies.json
+
+
+start_mongo
+
+
+mongoimport -u root -p MTc2OTAtdGpndXM0 --authenticationDatabase admin --db entertainment --collection movies --file movies.json
+
+
+
+db.movies.aggregate([
+{
+    "$group":{
+        "_id":"$year",
+        "moviecount":{"$sum":1}
+        }
+},
+{
+    "$sort":{"moviecount":-1}
+},
+{
+    "$limit":1
+}
+])
+
+
+db.movies.aggregate([
+{
+    $match:{year:{$gt:1999}}
+},
+{
+    "$group":{
+        "_id":null,
+        "moviecount":{"$sum":1}
+        }
+},
+{
+    "$sort":{"moviecount":-1}
+},
+])
+
+db.movies.aggregate([
+{
+    $match:{year:2007}
+},
+{
+    "$group":{
+        "_id":null,
+        "averagevote":{"$avg":"$Votes"}
+        }
+}
+])
+
+
+mongoexport -u root -p MTc2OTAtdGpndXM0 --authenticationDatabase admin --db entertainment --collection movies --out partial_data.csv --type=csv --fields _id,title,year,rating,Director
+
+
+start_cassandra
+
+CREATE KEYSPACE entertainment
+WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
+
+use entertainment; 
+CREATE TABLE movies(
+id text PRIMARY KEY,
+title text,
+year int,
+rating text,
+Director text
+);
+
+use entertainment;
+COPY entertainment.movies(id,title,year,rating,Director) FROM 'partial_data.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+
+
+use entertainment;
+select count(*) from movies;
+
+
+
+create index rating_index on entertainment.movies(rating);
+
+use entertainment;
+select count(*) from movies where rating='G';
+
+
+

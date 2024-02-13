@@ -1,0 +1,105 @@
+SET FOREIGN_KEY_CHECKS=0;
+
+INSERT INTO `country` VALUES ('CAN','Canada','North America','North America',9970610.00,1867,31147000,79.4,598862.00,625626.00,'Canada','Constitutional Monarchy, Federation','Elisabeth II',1822,'CA');
+
+INSERT INTO `countrylanguage` VALUES ('CAN','Chinese','F',2.5);
+INSERT INTO `countrylanguage` VALUES ('CAN','Dutch','F',0.5);
+INSERT INTO `countrylanguage` VALUES ('CAN','English','T',60.4);
+INSERT INTO `countrylanguage` VALUES ('CAN','Eskimo Languages','F',0.1);
+INSERT INTO `countrylanguage` VALUES ('CAN','French','T',23.4);
+INSERT INTO `countrylanguage` VALUES ('CAN','German','F',1.6);
+INSERT INTO `countrylanguage` VALUES ('CAN','Italian','F',1.7);
+INSERT INTO `countrylanguage` VALUES ('CAN','Polish','F',0.7);
+INSERT INTO `countrylanguage` VALUES ('CAN','Portuguese','F',0.7);
+INSERT INTO `countrylanguage` VALUES ('CAN','Punjabi','F',0.7);
+INSERT INTO `countrylanguage` VALUES ('CAN','Spanish','F',0.7);
+INSERT INTO `countrylanguage` VALUES ('CAN','Ukrainian','F',0.6);
+
+INSERT INTO `city` VALUES (1810,'Montréal','CAN','Québec',1016376);
+INSERT INTO `city` VALUES (1811,'Calgary','CAN','Alberta',768082);
+INSERT INTO `city` VALUES (1812,'Toronto','CAN','Ontario',688275);
+INSERT INTO `city` VALUES (1813,'North York','CAN','Ontario',622632);
+INSERT INTO `city` VALUES (1814,'Winnipeg','CAN','Manitoba',618477);
+INSERT INTO `city` VALUES (1815,'Edmonton','CAN','Alberta',616306);
+INSERT INTO `city` VALUES (1816,'Mississauga','CAN','Ontario',608072);
+INSERT INTO `city` VALUES (1817,'Scarborough','CAN','Ontario',594501);
+INSERT INTO `city` VALUES (1818,'Vancouver','CAN','British Colombia',514008);
+INSERT INTO `city` VALUES (1819,'Etobicoke','CAN','Ontario',348845);
+INSERT INTO `city` VALUES (1820,'London','CAN','Ontario',339917);
+INSERT INTO `city` VALUES (1821,'Hamilton','CAN','Ontario',335614);
+INSERT INTO `city` VALUES (1822,'Ottawa','CAN','Ontario',335277);
+INSERT INTO `city` VALUES (1823,'Laval','CAN','Québec',330393);
+INSERT INTO `city` VALUES (1824,'Surrey','CAN','British Colombia',304477);
+INSERT INTO `city` VALUES (1825,'Brampton','CAN','Ontario',296711);
+INSERT INTO `city` VALUES (1826,'Windsor','CAN','Ontario',207588);
+INSERT INTO `city` VALUES (1827,'Saskatoon','CAN','Saskatchewan',193647);
+INSERT INTO `city` VALUES (1828,'Kitchener','CAN','Ontario',189959);
+INSERT INTO `city` VALUES (1829,'Markham','CAN','Ontario',189098);
+INSERT INTO `city` VALUES (1830,'Regina','CAN','Saskatchewan',180400);
+INSERT INTO `city` VALUES (1831,'Burnaby','CAN','British Colombia',179209);
+INSERT INTO `city` VALUES (1832,'Québec','CAN','Québec',167264);
+INSERT INTO `city` VALUES (1833,'York','CAN','Ontario',154980);
+INSERT INTO `city` VALUES (1834,'Richmond','CAN','British Colombia',148867);
+INSERT INTO `city` VALUES (1835,'Vaughan','CAN','Ontario',147889);
+INSERT INTO `city` VALUES (1836,'Burlington','CAN','Ontario',145150);
+INSERT INTO `city` VALUES (1837,'Oshawa','CAN','Ontario',140173);
+INSERT INTO `city` VALUES (1838,'Oakville','CAN','Ontario',139192);
+INSERT INTO `city` VALUES (1839,'Saint Catharines','CAN','Ontario',136216);
+INSERT INTO `city` VALUES (1840,'Longueuil','CAN','Québec',127977);
+INSERT INTO `city` VALUES (1841,'Richmond Hill','CAN','Ontario',116428);
+INSERT INTO `city` VALUES (1842,'Thunder Bay','CAN','Ontario',115913);
+INSERT INTO `city` VALUES (1843,'Nepean','CAN','Ontario',115100);
+INSERT INTO `city` VALUES (1844,'Cape Breton','CAN','Nova Scotia',114733);
+INSERT INTO `city` VALUES (1845,'East York','CAN','Ontario',114034);
+INSERT INTO `city` VALUES (1846,'Halifax','CAN','Nova Scotia',113910);
+INSERT INTO `city` VALUES (1847,'Cambridge','CAN','Ontario',109186);
+INSERT INTO `city` VALUES (1848,'Gloucester','CAN','Ontario',107314);
+INSERT INTO `city` VALUES (1849,'Abbotsford','CAN','British Colombia',105403);
+INSERT INTO `city` VALUES (1850,'Guelph','CAN','Ontario',103593);
+INSERT INTO `city` VALUES (1851,'Saint John´s','CAN','Newfoundland',101936);
+INSERT INTO `city` VALUES (1852,'Coquitlam','CAN','British Colombia',101820);
+INSERT INTO `city` VALUES (1853,'Saanich','CAN','British Colombia',101388);
+INSERT INTO `city` VALUES (1854,'Gatineau','CAN','Québec',100702);
+INSERT INTO `city` VALUES (1855,'Delta','CAN','British Colombia',95411);
+INSERT INTO `city` VALUES (1856,'Sudbury','CAN','Ontario',92686);
+INSERT INTO `city` VALUES (1857,'Kelowna','CAN','British Colombia',89442);
+INSERT INTO `city` VALUES (1858,'Barrie','CAN','Ontario',89269);
+
+
+
+INSERT INTO `city` VALUES (150,'Dhaka','BGD','Dhaka',3612850);
+INSERT INTO `city` VALUES (151,'Chittagong','BGD','Chittagong',1392860);
+INSERT INTO `city` VALUES (152,'Khulna','BGD','Khulna',663340);
+INSERT INTO `city` VALUES (153,'Rajshahi','BGD','Rajshahi',294056);
+INSERT INTO `city` VALUES (154,'Narayanganj','BGD','Dhaka',202134);
+INSERT INTO `city` VALUES (155,'Rangpur','BGD','Rajshahi',191398);
+INSERT INTO `city` VALUES (156,'Mymensingh','BGD','Dhaka',188713);
+INSERT INTO `city` VALUES (157,'Barisal','BGD','Barisal',170232);
+INSERT INTO `city` VALUES (158,'Tungi','BGD','Dhaka',168702);
+INSERT INTO `city` VALUES (159,'Jessore','BGD','Khulna',139710);
+INSERT INTO `city` VALUES (160,'Comilla','BGD','Chittagong',135313);
+INSERT INTO `city` VALUES (161,'Nawabganj','BGD','Rajshahi',130577);
+INSERT INTO `city` VALUES (162,'Dinajpur','BGD','Rajshahi',127815);
+INSERT INTO `city` VALUES (163,'Bogra','BGD','Rajshahi',120170);
+INSERT INTO `city` VALUES (164,'Sylhet','BGD','Sylhet',117396);
+INSERT INTO `city` VALUES (165,'Brahmanbaria','BGD','Chittagong',109032);
+INSERT INTO `city` VALUES (166,'Tangail','BGD','Dhaka',106004);
+INSERT INTO `city` VALUES (167,'Jamalpur','BGD','Dhaka',103556);
+INSERT INTO `city` VALUES (168,'Pabna','BGD','Rajshahi',103277);
+INSERT INTO `city` VALUES (169,'Naogaon','BGD','Rajshahi',101266);
+INSERT INTO `city` VALUES (170,'Sirajganj','BGD','Rajshahi',99669);
+INSERT INTO `city` VALUES (171,'Narsinghdi','BGD','Dhaka',98342);
+INSERT INTO `city` VALUES (172,'Saidpur','BGD','Rajshahi',96777);
+INSERT INTO `city` VALUES (173,'Gazipur','BGD','Dhaka',96717);
+
+INSERT INTO `country` VALUES ('BGD','Bangladesh','Asia','Southern and Central Asia',143998.00,1971,129155000,60.2,32852.00,31966.00,'Bangladesh','Republic','Shahabuddin Ahmad',150,'BD');
+
+INSERT INTO `countrylanguage` VALUES ('BGD','Bengali','T',97.7);
+INSERT INTO `countrylanguage` VALUES ('BGD','Chakma','F',0.4);
+INSERT INTO `countrylanguage` VALUES ('BGD','Garo','F',0.1);
+INSERT INTO `countrylanguage` VALUES ('BGD','Khasi','F',0.1);
+INSERT INTO `countrylanguage` VALUES ('BGD','Marma','F',0.2);
+INSERT INTO `countrylanguage` VALUES ('BGD','Santhali','F',0.1);
+INSERT INTO `countrylanguage` VALUES ('BGD','Tripuri','F',0.1);
+
+SET FOREIGN_KEY_CHECKS=1;
